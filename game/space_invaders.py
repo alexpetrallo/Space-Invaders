@@ -41,6 +41,10 @@ player.setheading(90)
 
 #make bad guys
 #setting number of badGuys with a list
+
+##make a bad guy shape or png
+screenaddshape("space_invaders.jpg")
+
 number_of_badGuys = 5
 badGuys = []
 for i in range(number_of_badGuys):
