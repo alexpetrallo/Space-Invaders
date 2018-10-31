@@ -29,11 +29,14 @@ score_pen.setposition(-290, 280)
 scorestring = "Score: %s" %score
 score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
 
+player = turtle.Screen()
+playerImg = "playerResize.gif"
+player.addshape(playerImg)
 
 #create player
 player = turtle.Turtle()
 player.color("green")
-player.shape("triangle")
+player.shape(playerImg)
 player.penup()
 player.speed(0)
 player.setposition(0, -250)
@@ -42,8 +45,11 @@ player.setheading(90)
 #make bad guys
 #setting number of badGuys with a list
 
-##make a bad guy shape or png
-screenaddshape("space_invaders.jpg")
+#make a bad guy shape or png
+screen = turtle.Screen()
+badGuyImg = "badGuyResize.gif"
+screen.addshape(badGuyImg)
+# turtle.shape(image)
 
 number_of_badGuys = 5
 badGuys = []
@@ -53,7 +59,7 @@ for i in range(number_of_badGuys):
 for badGuy in badGuys:
     # badGuy = turtle.Turtle()
     badGuy.color("red")
-    badGuy.shape("square")
+    badGuy.shape(badGuyImg)
     badGuy.penup()
     badGuy.speed(0)
     x = random.randint(-200, 200)
@@ -171,10 +177,6 @@ while True:
 
 
         #reverse if it reaches border
-
-
-
-
 
 
 
