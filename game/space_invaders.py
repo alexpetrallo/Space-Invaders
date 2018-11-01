@@ -6,6 +6,7 @@ import random
 wn = turtle.Screen()
 wn.bgcolor("black")
 wn.title("Space Invaders")
+screen = turtle.Screen()
 
 border_pen = turtle.Turtle()
 border_pen.speed(0)
@@ -31,9 +32,12 @@ score_pen.write(scorestring, False, align="left", font=("Arial", 14, "normal"))
 
 
 #create player
+playerImg = "playerResize.gif"
+screen.addshape(playerImg)
+
 player = turtle.Turtle()
 player.color("green")
-player.shape("triangle")
+player.shape(playerImg)
 player.penup()
 player.speed(0)
 player.setposition(0, -250)
@@ -41,6 +45,8 @@ player.setheading(90)
 
 #make bad guys
 #setting number of badGuys with a list
+badGuyImg = "badguyfull.gif"
+screen.addshape(badGuyImg)
 number_of_badGuys = 5
 badGuys = []
 for i in range(number_of_badGuys):
@@ -49,7 +55,7 @@ for i in range(number_of_badGuys):
 for badGuy in badGuys:
     # badGuy = turtle.Turtle()
     badGuy.color("red")
-    badGuy.shape("square")
+    badGuy.shape(badGuyImg)
     badGuy.penup()
     badGuy.speed(0)
     x = random.randint(-200, 200)
